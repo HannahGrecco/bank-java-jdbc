@@ -9,11 +9,13 @@ public class Conta {
     private Integer numero;
     private BigDecimal valor;
     private Cliente titular;
+    private boolean ativo;
 
-    public Conta(Integer numero, BigDecimal valor, Cliente titular){
+    public Conta(Integer numero, BigDecimal valor, Cliente titular, Boolean ativo){
         this.numero = numero;
         this.valor = valor;
         this.titular = titular;
+        this.ativo = ativo;
     }
     public boolean possuiSaldo(){
         return this.valor.compareTo(BigDecimal.ZERO) !=0;
@@ -52,5 +54,11 @@ public class Conta {
                 '}';
 
 
+    }
+    public boolean isAtivo(){
+        return ativo;
+    }
+    public void setAtivo (boolean ativo){
+        this.ativo = ativo;
     }
 }
